@@ -1,0 +1,34 @@
+.banner {
+  display: flex;
+  align-items: center;
+  background-color: #dedede;
+  padding: 20px;
+}
+
+.canine-image-container {
+  max-width: 30%; /* Establece el ancho máximo al 65% del contenedor */
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente la imagen */
+  align-items: center; /* Centra verticalmente la imagen */
+}
+
+.canine-image2 {
+  max-width: 100%; /* Establece el ancho máximo al 100% del contenedor */
+  height: auto;
+}
+
+.canine-info {
+  width: 50%;
+  padding: 20px;
+}
+
+.canine-info h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.canine-info p {
+  font-size: 16px;
+  margin: 0;
+}

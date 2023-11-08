@@ -1,0 +1,84 @@
+/* Reset de márgenes y rellenos para el cuerpo del documento */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para los enlaces */
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo para los botones */
+button {
+  cursor: pointer;
+}
+
+/* Estilo para los formularios */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilo para las listas */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Estilo para las tarjetas */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 4px 4px 0 0;
+}
+
+/* Otros estilos específicos según los componentes y módulos */
+
+/* ... (agrega aquí los estilos específicos para tus componentes y módulos) */
+.delete-role-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ff4500;
+    }
+  }
+}
+
+body {
+  background: linear-gradient(to bottom, #3498db, #e74c3c);
+}

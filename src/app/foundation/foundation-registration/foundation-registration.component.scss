@@ -1,0 +1,97 @@
+.container {
+
+
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+
+  .alert-info {
+    background-color: rgb(228, 225, 225); /* Color de fondo */
+    color: rgb(255, 0, 0); /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    padding: 50px; /* Espaciado interno */
+    border: 2px solid rgb(255, 0, 0); /* Borde con grosor y color */
+    border-radius: 10px; /* Borde redondeado */
+    width: 50%; /* Ancho del cuadro, puedes ajustar según tus necesidades */
+    margin: 0 auto; /* Centra horizontalmente en la pantalla */
+    text-align: center; /* Alinea el texto al centro */
+  }
+
+  h2 {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto; /* Centra horizontalmente en la pantalla */
+    text-align: center; /* Alinea el texto al centro */
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Ajusta el ancho máximo para input y textarea según tus necesidades */
+    margin: 0 auto; /* Centra horizontalmente en la pantalla */
+
+    label {
+      font-size: 18px;
+    }
+
+    textarea {
+      width: 100%; /* Usa el 100% del ancho disponible */
+      max-width: 400px; /* Ajusta el ancho máximo para textarea según tus necesidades */
+      height: 50px; /* Ajusta la altura según tus necesidades */
+    }
+
+    input {
+      width: 100%; /* Usa el 100% del ancho disponible */
+      max-width: 400px; /* Ajusta el ancho máximo para input según tus necesidades */
+      margin-bottom: 10px;
+      text-align: center; /* Alinea el texto al centro */
+      height: 30px; /* Ajusta la altura según tus necesidades */
+    }
+  }
+
+
+  .button-container {
+    margin-top: 20px; /* Espacio entre el formulario y el contenedor de botones */
+    text-align: center; /* Centra los botones horizontalmente */
+  }
+
+  .left-button {
+    margin-right: 10px; /* Espacio entre los botones */
+    background-color: #0cec71; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    padding: 10px 20px; /* Espacio interior del botón */
+    border: none; /* Quita el borde del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+  }
+
+  .right-button {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    padding: 10px 20px; /* Espacio interior del botón */
+    border: none; /* Quita el borde del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+  }
+
+  .right-button:hover {
+    background-color: #22edff; /* Color de fondo del botón al pasar por encima */
+  }
+.left-button:hover{
+  background-color: #43fa00; /* Color de fondo del botón al pasar por encima */
+
+}
+
+
+}
+h1 {
+  text-align: center; /* Centrar el título */
+  font-size: 36px; /* Tamaño de fuente más grande */
+  color: #333; /* Cambia el color del texto a tu preferencia */
+  font-family: 'Arial', sans-serif; /* Cambia la fuente a tu preferencia */
+  font-weight: bold; /* Texto en negrita */
+  text-transform: uppercase; /* Convertir el texto a mayúsculas */
+  margin: 20px 0; /* Agregar un espacio en la parte superior e inferior */
+}
+

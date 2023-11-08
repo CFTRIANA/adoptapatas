@@ -1,0 +1,25 @@
+<div>
+    <h2>Administración de Roles</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre del Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Itera sobre la lista de roles y muestra sus detalles -->
+        <tr *ngFor="let role of roles">
+          <td>{{ role.id }}</td>
+          <td>{{ role.name }}</td>
+          <td>
+            <!-- Botones para editar y eliminar el rol -->
+            <button (click)="editRole(role.id)">Editar</button>
+            <button (click)="deleteRole(role.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

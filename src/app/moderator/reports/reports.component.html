@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">
+    Generar Informe
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="reportType">Tipo de Informe:</label>
+      <select class="form-control" id="reportType">
+        <option value="donations">Donaciones</option>
+        <option value="adoptions">Adopciones</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="startDate">Fecha de Inicio:</label>
+      <input type="date" class="form-control" id="startDate" >
+    </div>
+    <div class="form-group">
+      <label for="endDate">Fecha de Fin:</label>
+      <input type="date" class="form-control" id="endDate">
+    </div>
+    <button class="btn btn-primary">Generar Informe</button>
+    <div *ngIf>
+      <h2>Informe Generado</h2>
+      <!-- Aquí mostrar los datos del informe generado -->
+    </div>
+  </div>
+</div>

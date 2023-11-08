@@ -1,0 +1,12 @@
+<div>
+    <h2>Eliminar Rol</h2>
+    <p>¿Estás seguro de que quieres eliminar este rol?</p>
+    
+    <!-- Mostrar detalles del rol que se va a eliminar -->
+    <p>Nombre del Rol: {{ roleName }}</p>
+    
+    <!-- Confirmación de eliminación -->
+    <button (click)="confirmDelete()">Eliminar</button>
+    <button (click)="cancelDelete()">Cancelar</button>
+  </div>
+  

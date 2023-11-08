@@ -1,0 +1,26 @@
+<div>
+    <h2>Administración de Usuarios</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Itera sobre la lista de usuarios y muestra sus detalles -->
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <!-- Botones para editar el rol del usuario -->
+            <button (click)="editRole(user.id)">Editar Rol</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

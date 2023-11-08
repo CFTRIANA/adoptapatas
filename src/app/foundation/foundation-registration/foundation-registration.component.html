@@ -1,0 +1,94 @@
+
+<body (click)="handleClick()">
+
+
+<div class="container">
+    <h1>Registro de Fundación</h1>
+    <br>
+    <div *ngIf="mostrarMensaje" class="alert-info">
+      Por Favor ten encuenta Que la informacion debe ser beridica, sera revisada. de ser seleccionado se enviara la informacion del siguiente paso
+    </div>
+    <br>
+    <form #r="ngForm"  (ngSubmit)="onSubmit(r)">
+
+      <label for="nombreRepresentante">Nombre del Representante:</label>
+<input type="text" id="nombreRepresentante" name="nombreRepresentante" [(ngModel)]="nombreRepresentante" required>
+<br><br>
+
+<label for="nombreFundacion">Nombre de la Fundación:</label>
+<input type="text" id="nombreFundacion" name="nombreFundacion" [(ngModel)]="nombreFundacion" required>
+<br><br>
+
+<label for="direccion">Dirección:</label>
+<input type="text" id="direccion" name="direccion" [(ngModel)]="direccion" required>
+<br><br>
+
+<label for="municipio">Municipio:</label>
+<input type="text" id="municipio" name="municipio" [(ngModel)]="municipio" required>
+<br><br>
+
+<label for="departamento">Departamento:</label>
+<input type="text" id="departamento" name="departamento" [(ngModel)]="departamento" required>
+<br><br>
+
+<label for="correo">Correo Electrónico:</label>
+<input type="email" id="correo" name="correo" [(ngModel)]="correo" required>
+<br><br>
+
+<label for="telefono">Teléfono:</label>
+<input type="text" id="telefono" name="telefono" [(ngModel)]="telefono" required>
+<br><br>
+
+<label for="celular">Celular:</label>
+<input type="text" id="celular" name="celular" [(ngModel)]="celular" required>
+<br><br>
+
+<label for="descripcion">Descripción:</label>
+<textarea id="descripcion" name="descripcion" [(ngModel)]="descripcion" required></textarea>
+<br><br>
+
+<label for="mision">Misión:</label>
+<textarea id="mision" name="mision" [(ngModel)]="mision" required></textarea>
+<br><br>
+
+<label for="vision">Visión:</label>
+<textarea id="vision" name="vision" [(ngModel)]="vision" required></textarea>
+<br><br>
+
+<label for="objetivoSocial">Objetivo Social:</label>
+<textarea id="objetivoSocial" name="objetivoSocial" [(ngModel)]="objetivoSocial" required></textarea>
+<br><br>
+
+<label for="logoFundacion">Logo de la Fundación:</label>
+<input type="file" (change)="onFileSelected($event, 'logoFundacion')" accept="image/*"   required>
+<!-- <input type="file" id="logoFundacion" name="logoFundacion" [(ngModel)]="logoFundacion" (change)="onFileSelected($event, 'logoFundacion')" required>
+  -->
+<br><br>
+<img *ngIf="logoFundacion" [src]="logoFundacion" alt="logo de la Fundación">
+<br><br>
+
+<label for="fotoFundacion">Foto de la Fundación:</label>
+<input type="file" (change)="onFileSelected($event, 'fotoFundacion')" accept="image/*"   required>
+<!--<input type="file" id="fotoFundacion" name="fotoFundacion" [(ngModel)]="fotoFundacion"  (change)="onFileSelected($event, 'fotoFundacion')" required>-->
+<br><br>
+
+<img *ngIf="fotoFundacion" [src]="fotoFundacion" alt="Foto de la Fundación">
+
+<br><br>
+<!--<label for="password">Contraseña:</label>
+<input type="password" id="password" name="password" [(ngModel)]="password" required>
+<br><br>   -->
+
+
+<div class="button-container">
+  <button class="left-button" [routerLink]="'/login'">Volver</button>
+  <button type="onSubmit" class="right-button">Enviar solicitud</button>
+</div>
+
+
+
+
+    </form>
+  </div>
+
+</body>

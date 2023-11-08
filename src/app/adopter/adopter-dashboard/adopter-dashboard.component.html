@@ -1,0 +1,23 @@
+
+
+<div class="banner">
+  <button (click)="cambiarContenido(-1)" class="banner-button">Anterior</button>
+  <div class="canine-image-container">
+    <img [src]="imagenActual" class="canine-image2" alt="Imagen de canino">
+  </div>
+  <button (click)="cambiarContenido(1)" class="banner-button">Siguiente</button>
+
+  <div class="canine-info">
+    <h2>{{ nombre }}</h2>
+    <p>Fundacion Responsable: {{ fundacion }}</p>
+    <p>Edad: {{ edad }} años</p>
+    <p>Raza: {{ raza }}</p>
+    <p>Descripción: {{ descripcion }}</p>
+    <p>Estado de Salud: {{ estadoSalud }}</p>
+    <p>Temperamento: {{ temperamento }}</p>
+  </div>
+</div>
+
+
+
+

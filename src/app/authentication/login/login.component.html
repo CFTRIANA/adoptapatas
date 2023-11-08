@@ -1,0 +1,47 @@
+<div class="TITULO">
+<h1>ADOPTAPATAS CONNECT</h1>
+</div>
+<div *ngIf="mostrarAlerta" class="alert-info">
+         Informacion incorrecta , por favor revisa CORREO o CONTRASEÑA
+</div>
+
+<div class="login-container">
+
+    <!-- Formulario de inicio de sesión
+    <h2>Iniciar Sesión</h2>
+    -->
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+
+      <label for="username">Usuario:</label>
+
+   <!--  <input type="text" id="username" [(ngModel)]="username" required >  -->
+
+      <input type="text" id="username" name="username" [(ngModel)]="username" required>
+
+      <br>
+
+      <label for="password">Contraseña:</label>
+
+      <!-- <input type="password" id="password" [(ngModel)]="password" required> -->
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      <br>
+      <button type="onSubmit" >Iniciar Sesión</button>
+     <!---
+      <br>
+      <p>No estas registrado?</p>
+      <button type="button" [routerLink]="'/register'">Registrarse</button>
+      <br>
+      <p>Eres fundacion? </p>
+      <br>
+      <button type="button" [routerLink]="'/foundation-registration'">Solicitar unirme </button>
+
+ -->
+
+
+    </form>
+   <!-- para aue sea el principal-->
+
+
+
+  </div>

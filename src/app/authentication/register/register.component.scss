@@ -1,0 +1,47 @@
+.register-container {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  
+    h2 {
+      text-align: center;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      label,
+      input {
+        margin-bottom: 10px;
+      }
+  
+      button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #218838;
+        }
+      }
+    }
+  }
+  
+  
+
+.alert-info {
+  background-color: rgb(128, 255, 170); /* Color de fondo */
+  color: rgb(255, 255, 255); /* Color del texto */
+  font-size: 16px; /* Tamaño de fuente */
+  padding: 50px; /* Espaciado interno */
+  border: 2px solid rgb(0, 255, 13); /* Borde con grosor y color */
+  border-radius: 10px; /* Borde redondeado */
+  width: 80%; /* Ancho del cuadro, puedes ajustar según tus necesidades */
+  margin: 0 auto; /* Centra horizontalmente en la pantalla */
+  text-align: center; /* Alinea el texto al centro */
+}

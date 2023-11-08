@@ -1,0 +1,26 @@
+.delete-role-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ff6347;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #ff4500;
+      }
+    }
+  }
+  
