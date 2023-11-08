@@ -1,97 +1,93 @@
+$primary-color: #d9ffcb; // Rosa pálido
+$secondary-color: #add8e6; // Azul cielo
+$tertiary-color: #ffd700; // Amarillo claro
+$quaternary-color: #fd6bb9; // Naranja pastel
+$black-color: #000000; // Negro
+$gray-color: #a02e2e; // Gris
+$white-color: #ffffff; // Blanco
+$font-size-base: 16px;
+$border-radius-base: 5px;
+$border-thick: 2px;
+$padding-base-horizontal: 20px;
+$padding-base-vertical: 10px;
+
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
 .container {
-
-
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-
+  padding: $padding-base-vertical $padding-base-horizontal;
+  border: $border-thick solid $primary-color;
+  border-radius: $border-radius-base;
+  background: linear-gradient(to bottom right, $primary-color, $secondary-color, $tertiary-color, $quaternary-color);
+  color: $black-color;
 
   .alert-info {
-    background-color: rgb(228, 225, 225); /* Color de fondo */
-    color: rgb(255, 0, 0); /* Color del texto */
-    font-size: 16px; /* Tamaño de fuente */
-    padding: 50px; /* Espaciado interno */
-    border: 2px solid rgb(255, 0, 0); /* Borde con grosor y color */
-    border-radius: 10px; /* Borde redondeado */
-    width: 50%; /* Ancho del cuadro, puedes ajustar según tus necesidades */
-    margin: 0 auto; /* Centra horizontalmente en la pantalla */
-    text-align: center; /* Alinea el texto al centro */
+    background-color: $white-color;
+    color: $black-color;
+    font-size: $font-size-base;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    border: $border-thick solid $black-color;
+    border-radius: $border-radius-base;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
   }
 
   h2 {
     text-align: center;
+    color: $black-color;
     max-width: 300px;
-    margin: 0 auto; /* Centra horizontalmente en la pantalla */
-    text-align: center; /* Alinea el texto al centro */
+    margin: 0 auto;
+    text-align: center;
   }
-
   form {
     display: flex;
     flex-direction: column;
-    max-width: 400px; /* Ajusta el ancho máximo para input y textarea según tus necesidades */
-    margin: 0 auto; /* Centra horizontalmente en la pantalla */
+    max-width: 400px;
+    margin: 0 auto;
 
     label {
-      font-size: 18px;
+      font-size: $font-size-base;
+      color: $black-color;
     }
 
-    textarea {
-      width: 100%; /* Usa el 100% del ancho disponible */
-      max-width: 400px; /* Ajusta el ancho máximo para textarea según tus necesidades */
-      height: 50px; /* Ajusta la altura según tus necesidades */
-    }
-
-    input {
-      width: 100%; /* Usa el 100% del ancho disponible */
-      max-width: 400px; /* Ajusta el ancho máximo para input según tus necesidades */
+    textarea,
+    input[type="text"] {
+      width: 100%;
+      max-width: 400px;
+      height: 30px;
+      border: 1px solid $gray-color; // Borde gris
       margin-bottom: 10px;
-      text-align: center; /* Alinea el texto al centro */
-      height: 30px; /* Ajusta la altura según tus necesidades */
+      text-align: center;
+      padding: 5px;
     }
   }
-
-
   .button-container {
-    margin-top: 20px; /* Espacio entre el formulario y el contenedor de botones */
-    text-align: center; /* Centra los botones horizontalmente */
+    margin-top: 20px;
+    text-align: center;
   }
-
-  .left-button {
-    margin-right: 10px; /* Espacio entre los botones */
-    background-color: #0cec71; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-    padding: 10px 20px; /* Espacio interior del botón */
-    border: none; /* Quita el borde del botón */
-    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
-  }
-
+  .left-button,
   .right-button {
-    background-color: #007bff; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-    padding: 10px 20px; /* Espacio interior del botón */
-    border: none; /* Quita el borde del botón */
-    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+    background-color: $primary-color;
+    color: $black-color;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+    }
   }
-
-  .right-button:hover {
-    background-color: #22edff; /* Color de fondo del botón al pasar por encima */
+  .left-button {
+    margin-right: 10px;
   }
-.left-button:hover{
-  background-color: #43fa00; /* Color de fondo del botón al pasar por encima */
-
 }
 
 
-}
-h1 {
-  text-align: center; /* Centrar el título */
-  font-size: 36px; /* Tamaño de fuente más grande */
-  color: #333; /* Cambia el color del texto a tu preferencia */
-  font-family: 'Arial', sans-serif; /* Cambia la fuente a tu preferencia */
-  font-weight: bold; /* Texto en negrita */
-  text-transform: uppercase; /* Convertir el texto a mayúsculas */
-  margin: 20px 0; /* Agregar un espacio en la parte superior e inferior */
-}
+
+
+
 

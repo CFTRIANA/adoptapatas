@@ -1,64 +1,78 @@
-.TITULO{
+$primary-color: #d9ffcb; // Rosa pálido
+$secondary-color: #add8e6; // Azul cielo
+$tertiary-color: #ffd700; // Amarillo claro
+$quaternary-color: #fd6bb9; // Naranja pastel
+$black-color: #000000; // Negro
+$gray-color: #808080; // Gris
+$font-family: "Times New Roman", Times, serif;
+$font-size-base: 16px;
+$border-radius-base: 5px;
+$border-thick: 2px;
+$padding-base-horizontal: 20px;
+$padding-base-vertical: 10px;
 
+.TITULO {
   text-align: center;
   font-size: 30px;
-
+  color: $black-color; // Color de texto negro
+  font-family: $font-family; // Times New Roman
 }
-
-
 
 .alert-info {
-  background-color: rgb(228, 225, 225); /* Color de fondo */
-  color: rgb(255, 0, 0); /* Color del texto */
-  font-size: 16px; /* Tamaño de fuente */
-  padding: 50px; /* Espaciado interno */
-  border: 2px solid rgb(255, 0, 0); /* Borde con grosor y color */
-  border-radius: 10px; /* Borde redondeado */
-  width: 50%; /* Ancho del cuadro, puedes ajustar según tus necesidades */
-  margin: 0 auto; /* Centra horizontalmente en la pantalla */
-  text-align: center; /* Alinea el texto al centro */
+  background-color: $primary-color;
+  color: $black-color;
+  font-size: $font-size-base;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  border: $border-thick solid $black-color;
+  border-radius: $border-radius-base;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: $font-family; // Times New Roman
+}
+
+.login-container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  border: $border-thick solid $gray-color; // Borde gris
+  border-radius: $border-radius-base;
+  font-family: $font-family; // Times New Roman
+
+  h2 {
+    text-align: center;
+    font-family: $font-family; // Times New Roman
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label,
+    input {
+      margin-bottom: 10px;
+      font-family: $font-family;
+      // Times New Roman
+    }
+
+    button {
+      background-color: $primary-color;
+      color: $black-color;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: lighten($primary-color, 10%);
+      }
+    }
+  }
 }
 
 
-.login-container {
 
-  input {
-    width: 100%; /* Usa el 100% del ancho disponible */
-    max-width: 280px; /* Ajusta el ancho máximo para input según tus necesidades */
-    margin-bottom: 10px;
-    text-align: center; /* Alinea el texto al centro */
-    height: 30px; /* Ajusta la altura según tus necesidades */
-  }
 
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 
-    h2 {
-      text-align: center;
-    }
 
-    form {
-      display: flex;
-      flex-direction: column;
 
-      label,
-      input {
-        margin-bottom: 10px;
-      }
-
-      button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #0056b3;
-        }
-      }
-    }
-  }

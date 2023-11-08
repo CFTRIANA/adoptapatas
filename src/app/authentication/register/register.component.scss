@@ -1,47 +1,77 @@
+$primary-color: #d9ffcb; // Rosa pálido
+$secondary-color: #add8e6; // Azul cielo
+$tertiary-color: #ffd700; // Amarillo claro
+$quaternary-color: #fd6bb9; // Naranja pastel
+$black-color: #000000; // Negro
+$gray-color: #a02e2e; // Gris
+$white-color: #ffffff; // Blanco
+$font-size-base: 16px;
+$border-radius-base: 5px;
+$border-thick: 2px;
+$padding-base-horizontal: 20px;
+$padding-base-vertical: 10px;
+
+body {
+
+  font-family: "Times New Roman", Times, serif;
+}
+
 .register-container {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  
-    h2 {
+  background: linear-gradient(to bottom right, $primary-color, $secondary-color, $tertiary-color, $quaternary-color);
+  color: $black-color;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  border: $border-thick solid $gray-color; // Borde gris
+  border-radius: $border-radius-base;
+
+  h2 {
+    text-align: center;
+    color: $black-color;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      max-width: 280px;
+      margin-bottom: 10px;
       text-align: center;
+      height: 30px;
+      border: 1px solid $gray-color; // Borde gris
+      border-radius: $border-radius-base;
     }
-  
-    form {
-      display: flex;
-      flex-direction: column;
-  
-      label,
-      input {
-        margin-bottom: 10px;
-      }
-  
-      button {
-        background-color: #28a745;
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: #218838;
-        }
+
+    button {
+      background-color: $primary-color;
+      color: $black-color;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: lighten($primary-color, 10%);
       }
     }
   }
-  
-  
 
-.alert-info {
-  background-color: rgb(128, 255, 170); /* Color de fondo */
-  color: rgb(255, 255, 255); /* Color del texto */
-  font-size: 16px; /* Tamaño de fuente */
-  padding: 50px; /* Espaciado interno */
-  border: 2px solid rgb(0, 255, 13); /* Borde con grosor y color */
-  border-radius: 10px; /* Borde redondeado */
-  width: 80%; /* Ancho del cuadro, puedes ajustar según tus necesidades */
-  margin: 0 auto; /* Centra horizontalmente en la pantalla */
-  text-align: center; /* Alinea el texto al centro */
+  .alert-info {
+    background-color: $white-color;
+    color: $black-color;
+    font-size: $font-size-base;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    border: $border-thick solid $black-color;
+    border-radius: $border-radius-base;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
+
