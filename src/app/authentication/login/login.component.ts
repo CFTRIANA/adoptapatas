@@ -42,7 +42,7 @@ export class LoginComponent {
 
     sessionStorage.setItem('token', data.token);
     sessionStorage.setItem('rol',data.idRol);
-
+console.log(sessionStorage.getItem('rol'))
     console.log("SE HA INICIADO SESION ");
     //console.log(sessionStorage.getItem('token'))
 

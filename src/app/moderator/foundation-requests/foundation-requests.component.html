@@ -1,19 +1,71 @@
 <!-- reports.component.html -->
 
 <div class="container">
-  <h2>Generar Informe</h2>
-  
-    <div class="form-group">
-      <label for="startDate">Fecha de Inicio:</label>
-      <input type="date" formControlName="startDate" class="form-control">
+  <div class="TITULO">
+    <h1>&nbsp;&nbsp;&nbsp;SOLICITUDES DE FUNDACIONES</h1>
+    <div class="TITULO2">
+      <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Revisa la informacion de la solicitud , los datos deben ser reales.</h5>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="endDate">Fecha de Fin:</label>
-      <input type="date" formControlName="endDate" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-primary">Generar Informe</button>
 
+  <table>
+    <thead>
+      <tr>
+        <th>Seleccionar</th>
+        <th>ID </th>
+        <th>Representante</th>
+        <th>Nombre </th>
+        <th>Dirección</th>
+        <th>Municipio</th>
+        <th>Departamento</th>
+        <th>Correo</th>
+        <th>Telefono</th>
+        <th>Celular</th>
+        <th>Descripcion</th>
+        <th>Mision</th>
+        <th>Vision</th>
+        <th>Odjetivo social</th>
+        <th>Logo </th>
+        <th>Foto </th>
 
-  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fundacion of fundaciones">
+        <td><input type="checkbox" (change)="seleccionarFundacion(fundacion)"></td>
+        <td>{{ fundacion.idFundacion }}</td>
+        <td>{{ fundacion.nombreRepresentante }}</td>
+        <td>{{ fundacion.nombreFundacion }}</td>
+        <td>{{ fundacion.direccion }}</td>
+        <td>{{ fundacion.municipio }}</td>
+        <td>{{ fundacion.departamento }}</td>
+        <td>{{ fundacion.correo }}</td>
+        <td>{{ fundacion.telefono }}</td>
+        <td>{{ fundacion.celular }}</td>
+        <td>{{ fundacion.descripcion }}</td>
+        <td>{{ fundacion.mision }}</td>
+        <td>{{ fundacion.vision }}</td>
+        <td>{{ fundacion.objetivoSocial }}</td>
+        <td>{{ fundacion.logoFundacion }}</td>
+        <td>{{ fundacion.fotoFundacion }}</td>
 
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="procesarSeleccion()">Procesar Selección</button>
+  <div *ngIf="mostrarAlerta2" class="alert-info2">
+    SESION EXITOSA , Redirigiendo a DASHBOARD
   </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  </div>
+

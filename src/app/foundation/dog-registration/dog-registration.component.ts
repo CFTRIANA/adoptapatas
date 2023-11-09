@@ -66,7 +66,7 @@ disponibilidad: string = '';
 
   };
 
-   var credentialR =  this.FoundationService.registerFoundation(Credential);
+   var credentialR =  this.FoundationService.registroFundacion(Credential);
 
    credentialR.subscribe(
     (data:number) => {

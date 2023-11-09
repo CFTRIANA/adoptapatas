@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FoundationService {
-  private apiUrl = 'https://localhost:44312'; // Reemplaza 'URL_DE_TU_API' con la URL real de tu API
+  private apiUrl = 'https://adoptapataswebapi.azurewebsites.net'; // Reemplaza 'URL_DE_TU_API' con la URL real de tu API
 
   constructor(private http: HttpClient) { }
 
   // Registro de Fundación
-  registerFoundation(foundationData: any): Observable<any> {
+  registroFundacion(foundationData: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/registroFundacion`, foundationData);
   }
 

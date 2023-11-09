@@ -27,12 +27,16 @@ export class FoundationRegistrationComponent {
   mision: string = '';
   vision: string = '';
   objetivoSocial: string = '';
-  logoFundacion: string | null = null;
+  logoFundacion: string ='';
   fotoFundacion: string | null = null;
+  mostrarAlerta: boolean = false;
 
   constructor(private router: Router, private FoundationService: FoundationService) {
     // Constructor de tu componente
   }
+
+
+  miToken: string | null = sessionStorage.getItem('token');
 
 
 
@@ -41,6 +45,10 @@ export class FoundationRegistrationComponent {
 
     //se envia en tipo credential
  // console.log( this.username,this.lastname,this.email,this.number,this.address,this.municipality,this.department,this.user,this.password)
+
+
+
+
 
   console.log(
     this.nombreRepresentante,
@@ -55,13 +63,33 @@ export class FoundationRegistrationComponent {
     this.mision,
     this.vision,
     this.objetivoSocial
+
   );
 
-  var Credential = {nombre: this.nombreRepresentante, apellido: this.nombreFundacion , correo: this.direccion , celular: this.municipio
-    , direccion: this.departamento , municipio: this.correo ,departamento: this.telefono, usuario: this.celular
-  , contrasena: this.descripcion , mision:this.mision , vision:this.vision ,odjetivosocial:this.objetivoSocial  };
+  var Credential = {
+    nombreRepresentante: this.nombreRepresentante,
+    nombreFundacion: this.nombreFundacion ,
+    direccion: this.direccion ,
+    municipio:this.municipio ,
+    departamento:  this.departamento,
+    correo: this.correo ,
+   telefono:this.telefono,
+    celular: this.celular,
+    descripcion:this.descripcion,
+      mision:this.mision ,
+      vision:this.vision ,
+      objetivoSocial:this.objetivoSocial ,
+      logoFundacion: this.logoFundacion,
+        fotoFundacion: this.fotoFundacion  };
 
-   var credentialR =  this.FoundationService.registerFoundation(Credential);
+
+
+
+   var credentialR =  this.FoundationService.registroFundacion(Credential);
+
+
+   console.log(Credential);
+console.log(credentialR);
 
    credentialR.subscribe(
     (data:number) => {
@@ -69,6 +97,7 @@ export class FoundationRegistrationComponent {
     if( data === 1){
 
     console.log("SE HA REALIZADO EXITOSAMENTE EL REGISTRO DE FUNDACION");
+    this.mostrarAlerta = true;
    // this.redirigiradoptar();
 
 
@@ -105,7 +134,18 @@ export class FoundationRegistrationComponent {
 
 
 
-  onFileSelected(event: any, field: 'logoFundacion' | 'fotoFundacion'): void {
+  onFileSelected(event: any, field: 'logoFundacion'): void {
+    const file = event.target.files[0];
+    if (file) {
+      this.readFile(file).then((base64) => {
+        this[field] = base64;
+        console.log(this[field]);
+
+      });
+    }
+  }
+
+  onFileSelected2(event: any, field:  'fotoFundacion'): void {
     const file = event.target.files[0];
     if (file) {
       this.readFile(file).then((base64) => {

@@ -27,8 +27,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
-  { path: 'admin/user-management', component: UserManagementComponent },
-  { path: 'admin/role-management', component: RoleManagementComponent },
+  { path: 'user-management', component: UserManagementComponent },
+  { path: 'role-management', component: RoleManagementComponent },
   { path: 'admin/delete-role', component: DeleteRoleComponent },
 
   { path: 'foundation/foundation-registration', component: FoundationRegistrationComponent },
