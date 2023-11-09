@@ -34,7 +34,19 @@
     flex: 1;
   }
 
-  .toolbar {
+  .toolbar1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+  .toolbar2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -47,7 +59,30 @@
     font-weight: 600;
   }
 
-  .toolbar img {
+
+
+  .toolbar3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+  .toolbar3 img {
+    margin: 0 16px;
+  }
+
+  .toolbar1 img {
+    margin: 0 16px;
+  }
+
+
+  .toolbar2 img {
     margin: 0 16px;
   }
 
@@ -298,11 +333,10 @@
 </a>
 
  -->
+<!---<div class="toolbar" role="banner">
 
-<div class="toolbar" role="banner">
 
-
-  <span>   BIENVENIDOS ADOPTAPATAS</span>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIENVENIDOS&nbsp;ADOPATAPAS</span>
 
   <div class="spacer"></div>
 
@@ -311,9 +345,37 @@
   <button class="toolbar-button"[routerLink]="'/foundation-registration'">Registrar Fundacion</button>
 
 
+    </div> -->
+
+
+    <div *ngIf="rol === 1" class="toolbar1" role="banner">
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIENVENIDOS&nbsp;ADOPATAPAS</span>
+      <div class="spacer"></div>
+      <button class="toolbar-button" [routerLink]="'/login'">Inicio Sesion</button>
+      <button class="toolbar-button" [routerLink]="'/register'">Registrar Usuario</button>
+      <button class="toolbar-button" [routerLink]="'/foundation-registration'">Registrar Fundacion</button>
+      <button class="toolbar-volver" [routerLink]="'/adopter-dashboard'">Home</button>
+
     </div>
 
+    <div *ngIf="rol === 2" class="toolbar2" role="banner">
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIENVENIDO&nbsp;MONITOR</span>
+      <div class="spacer"></div>
+      <button class="toolbar-button" [routerLink]="'/login'">Activar fundacion</button>
+      <button class="toolbar-button" [routerLink]="'/register'">Cambio rol</button>
+      <button class="toolbar-volver" [routerLink]="'/adopter-dashboard'">Home</button>
 
+    </div>
+    <div *ngIf="rol === 3" class="toolbar2" role="banner">
+
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIENVENIDO&nbsp;FUNDACION</span>
+      <div class="spacer"></div>
+      <button class="toolbar-button" [routerLink]="'/dog-update'">Buscar Canino</button>
+      <button class="toolbar-button" [routerLink]="'/adoption-cart'">Disponibilidad Caninos</button>
+      <button class="toolbar-button" [routerLink]="'/dog-registration'">Añadir Canino</button>
+      <button class="toolbar-volver" [routerLink]="'/adopter-dashboard'">Home</button>
+
+    </div>
 <div class="content" role="main">
 
   <!-- Footer -->

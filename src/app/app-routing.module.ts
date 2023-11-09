@@ -14,7 +14,7 @@ import { DeleteRoleComponent } from './admin/delete-role/delete-role.component';
 import { FoundationRegistrationComponent } from './foundation/foundation-registration/foundation-registration.component';
 import { DogRegistrationComponent } from './foundation/dog-registration/dog-registration.component';
 import { DogUpdateComponent } from './foundation/dog-update/dog-update.component';
-import { GenerateReportComponent } from './foundation/generate-report/generate-report.component';
+//import { GenerateReportComponent } from './foundation/generate-report/generate-report.component';
 
 import { AdoptionComponent } from './adopter/adoption/adoption.component';
 import { AdoptionCartComponent } from './adopter/adoption-cart/adoption-cart.component';
@@ -34,16 +34,16 @@ const routes: Routes = [
   { path: 'foundation/foundation-registration', component: FoundationRegistrationComponent },
   { path: 'foundation-registration', component: FoundationRegistrationComponent },
   { path: 'dog-registration', component: DogRegistrationComponent },
-  { path: 'foundation/dog-update', component: DogUpdateComponent },
-  { path: 'foundation/generate-report', component: GenerateReportComponent },
+ { path: 'dog-update', component: DogUpdateComponent },
+ // { path: 'foundation/generate-report', component: GenerateReportComponent },
 
-  { path: 'adopter/adoption', component: AdoptionComponent },
+  { path: 'adoption', component: AdoptionComponent },
 
-  { path: 'adopter/adoption-cart', component: AdoptionCartComponent },
+  { path: 'adoption-cart', component: AdoptionCartComponent },
   { path: 'adopter-dashboard', component: AdopterDashboardComponent },
 
-  { path: 'moderator/foundation-requests', component: FoundationRequestsComponent },
-  { path: 'moderator/reports', component: ReportsComponent },
+  { path: 'foundation-requests', component: FoundationRequestsComponent },
+  { path: 'reports', component: ReportsComponent },
 
   // Puedes añadir más rutas según sea necesario
 

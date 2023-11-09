@@ -13,7 +13,7 @@ import { AuthenticationService } from '../authentication.service';
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  mostrarMensaje: boolean = false;
+
   Click: boolean = false;
 
   constructor(private router: Router, private authService: AuthenticationService) {
@@ -22,6 +22,7 @@ export class LoginComponent {
 
 
   mostrarAlerta: boolean = false;
+  mostrarAlerta2: boolean = false;
 
   onSubmit(f: NgForm){
 
@@ -30,7 +31,7 @@ export class LoginComponent {
 
   var Credential = {usuario : this.username, contrasena : this.password};
 
-   var credentialR =  this.authService.login(Credential);
+   var credentialR =  this.authService.InicioSesion(Credential);
 
    credentialR.subscribe(
     (data) => {
@@ -41,28 +42,33 @@ export class LoginComponent {
 
     sessionStorage.setItem('token', data.token);
     sessionStorage.setItem('rol',data.idRol);
+
     console.log("SE HA INICIADO SESION ");
     //console.log(sessionStorage.getItem('token'))
-    this.redirigiradoptar();
 
+    this.mostrarAlerta2 = true;
 
+    setTimeout(() => {
 
-    }
-    if(data.respuesta === 0 ){
-
-      console.log('NO SE HA INICIADO SESION ');
       this.redirigiradoptar();
-      this.mostrarAlerta = true;
-    }
+
+    }, 5000);
+
+
+  }
     // Aquí puedes acceder a las propiedades de "data" si es necesario
 
 
     },
     (error) => {
-
-      console.error('Ocurrió un HP error:', error);
-
-      // Manejar errores si es necesario
+      if (error.status === 400) {
+        // Manejar el Bad Request aquí
+        console.log("Bad Request del servidor ");
+        this.mostrarAlerta = true;
+      } else {
+        this.mostrarAlerta = true;
+        console.error("Error en la solicitud al servidor:", error);
+      }
     }
   );
 
@@ -79,7 +85,7 @@ export class LoginComponent {
     // Este método se activará al hacer clic en cualquier parte de la pantalla
     this.Click = true; // Marca la solicitud como realizada
     //  this.router.navigate(['/foundation-registration']);
-      this.mostrarAlerta = true;
+    //  this.mostrarAlerta = true;
 
     // Puedes realizar las acciones que desees aquí
   }

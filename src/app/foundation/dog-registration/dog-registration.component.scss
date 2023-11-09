@@ -1,3 +1,17 @@
+$primary-color: #d9ffcb; // Rosa pálido
+$secondary-color: #add8e6; // Azul cielo
+$tertiary-color: #ffd700; // Amarillo claro
+$quaternary-color: #fd6bb9; // Naranja pastel
+$black-color: #000000; // Negro
+$gray-color: #a02e2e; // Gris
+$white-color: #ffffff; // Blanco
+$font-size-base: 16px;
+$border-radius-base: 5px;
+$border-thick: 2px;
+$padding-base-horizontal: 20px;
+$padding-base-vertical: 10px;
+
+
 .registration-form {
     max-width: 400px;
     margin: 0 auto;
@@ -6,32 +20,47 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
+
+    img {
+
+      max-width: 350px;
+
+    }
     label {
       display: block;
       margin-bottom: 10px;
       font-weight: bold;
     }
-  
-    input[type="text"], textarea {
-      width: 100%;
+
+    input[type="text"], textarea,input[type="file"] {
+      width: 95%;
       padding: 8px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-  
-    .submit-button {
-      background-color: #007bff;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-  
-      &:hover {
-        background-color: #0056b3;
-      }
+
+ .button-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .left-button,
+  .right-button {
+    background-color: $primary-color;
+    color: $black-color;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: lighten($primary-color, 10%);
     }
   }
-  
+  .left-button {
+    margin-right: 10px;
+  }
+}
+
+
+
+

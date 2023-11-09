@@ -8,23 +8,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private apiUrl = 'https://localhost:44312'; // Reemplaza 'URL_DE_TU_API' con la URL real de tu API
+  private apiUrl = 'https://adoptapataswebapi.azurewebsites.net'; // Reemplaza 'URL_DE_TU_API' con la URL real de tu API
 
   constructor(private http: HttpClient) { }
 
 
 
   // Función para iniciar sesión
-  login(credentials: { usuario: string, contrasena: string }): Observable<any> {
+  InicioSesion(credentials: { usuario: string, contrasena: string }): Observable<any> {
 
-    return this.http.post<any>(`${this.apiUrl}/login`, credentials);
+    return this.http.post<any>(`${this.apiUrl}/inicioSesion`, credentials);
 
   }
 
 
   //registro
 
-  registro(credentials: {
+  registroUsuario(credentials: {
     nombre: string,
     apellido: string,
     correo: string,
@@ -35,11 +35,11 @@ export class AuthenticationService {
     usuario: string,
     contrasena: string
   }): Observable<any> {
-    
-  
+
+
     console.log('Objeto credentials antes de la solicitud POST:', credentials); // Imprimir el objeto en la consola
-  
-    return this.http.post<any>(`${this.apiUrl}/registro`, credentials);
+
+    return this.http.post<any>(`${this.apiUrl}/registroUsuario`, credentials);
   }
 
 
@@ -56,12 +56,12 @@ export class AuthenticationService {
     usuario: string,
     contrasena: string
   }): Observable<any> {
-    
+
     console.log('Objeto credentials antes de la solicitud POST:', credentials); // Imprimir el objeto en la consola
 
     return this.http.post<any>(`${this.apiUrl}/registro`, credentials);
 
-    
+
   }
 
 

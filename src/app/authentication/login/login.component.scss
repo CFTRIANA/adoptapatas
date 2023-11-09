@@ -5,21 +5,29 @@ $quaternary-color: #fd6bb9; // Naranja pastel
 $black-color: #000000; // Negro
 $gray-color: #808080; // Gris
 $font-family: "Times New Roman", Times, serif;
+$font-family2: "arial", Times, serif;
 $font-size-base: 16px;
 $border-radius-base: 5px;
 $border-thick: 2px;
 $padding-base-horizontal: 20px;
 $padding-base-vertical: 10px;
 
+
+
 .TITULO {
   text-align: center;
-  font-size: 30px;
+  font-size: 38px;
   color: $black-color; // Color de texto negro
   font-family: $font-family; // Times New Roman
 }
-
-.alert-info {
-  background-color: $primary-color;
+.TITULO2 {
+  text-align: center;
+  font-size: 25px;
+  color: $black-color; // Color de texto negro
+  font-family: $font-family2; // Times New Roman
+}
+.alert-info2 {
+  background-color: #d9ffcb;
   color: $black-color;
   font-size: $font-size-base;
   padding: $padding-base-vertical $padding-base-horizontal;
@@ -30,15 +38,31 @@ $padding-base-vertical: 10px;
   text-align: center;
   font-family: $font-family; // Times New Roman
 }
+.alert-info {
+  background-color: #f81e1e;
+  color: $black-color;
+  font-size: $font-size-base;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  border: $border-thick solid $black-color;
+  border-radius: $border-radius-base;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: $font-family; // Times New Roman
+}
+body{
 
+  height: 100%;
+}
 .login-container {
   max-width: 300px;
   margin: 0 auto;
   padding: $padding-base-vertical $padding-base-horizontal;
   border: $border-thick solid $gray-color; // Borde gris
   border-radius: $border-radius-base;
-  font-family: $font-family; // Times New Roman
-
+  font-family: $font-family;
+ // Times New Roman
+  height: 100%;
   h2 {
     text-align: center;
     font-family: $font-family; // Times New Roman
@@ -52,6 +76,7 @@ $padding-base-vertical: 10px;
     input {
       margin-bottom: 10px;
       font-family: $font-family;
+      max-width: 93%;
       // Times New Roman
     }
 

@@ -14,24 +14,41 @@
   background-color: #007BAA;
 }
 
+
+
+.toolbar-volver {
+  background-color: #008CBA; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  margin-right: 10px; /* Espacio entre botones (margen derecho) */
+  cursor: pointer; /* Cambiar el cursor al pasar por encima */
+}
+
+/* Cambiar el color al pasar el cursor sobre los botones */
+.toolbar-volver:hover {
+  background-color: #007BAA;
+}
+
 .role-management-container {
     padding: 20px;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 5px;
-  
+
     h2 {
       font-size: 24px;
       margin-bottom: 15px;
     }
-  
+
     .role-item {
       margin-bottom: 10px;
       padding: 10px;
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 5px;
-  
+
       &:hover {
         background-color: #f0f0f0;
       }
@@ -42,19 +59,19 @@
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 5px;
-  
+
     h2 {
       font-size: 24px;
       margin-bottom: 15px;
     }
-  
+
     .role-item {
       margin-bottom: 10px;
       padding: 10px;
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 5px;
-  
+
       &:hover {
         background-color: #f0f0f0;
       }

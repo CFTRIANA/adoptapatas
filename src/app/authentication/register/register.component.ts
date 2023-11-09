@@ -31,11 +31,11 @@ export class RegisterComponent {
     //se envia en tipo credential
   console.log( this.username,this.lastname,this.email,this.number,this.address,this.municipality,this.department,this.user,this.password)
 
- 
 
 
 
-  
+
+
   var Credential = {
     nombre: this.username,
     apellido: this.lastname,
@@ -48,24 +48,25 @@ export class RegisterComponent {
     contrasena: this.password
   };
 
-   var credentialR =  this.authService.registro(Credential);
+   var credentialR =  this.authService.registroUsuario(Credential);
 
-  
+
    credentialR.subscribe(
-    (data: number) => {
-      if (data === 1) {
+    (respuesta: { mensaje: null, respuesta: number }) => {
+      if (respuesta.respuesta === 1) {
 
         this.mostrarAlerta = true;
-        
+
         setTimeout(() => {
-          
-          this.redirigiradoptar();
-    
-        }, 6000); // Cerrar la notificación después de 2 segundos y redirigir
-      } else if (data === 0) {
+          this.redirigirlogin();
+        }, 10000);
+         // Cerrar la notificación después de 2 segundos y redirigir
+      } else if (respuesta.respuesta === 0) {
+
         console.log("NO SE HA INICIADO SESIÓN");
       }
     }
+
   );
 
   }
@@ -73,10 +74,10 @@ export class RegisterComponent {
 
 
 
-  
-  
-redirigiradoptar() {
-    this.router.navigate(['/adopter-dashboard']);
+
+
+redirigirlogin() {
+    this.router.navigate(['/login']);
   }
 
 
