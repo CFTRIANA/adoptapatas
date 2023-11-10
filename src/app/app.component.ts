@@ -23,11 +23,11 @@ export class AppComponent {
         // Navegar a la misma URL para forzar la recarga
         this.router.navigateByUrl(this.router.url);
         console.log("Recargado debido a un cambio en la URL");
-        const rolString = sessionStorage.getItem('rol');
+        const rolString = sessionStorage.getItem('idRol');
 
 
         // Convierte el valor a un número (puede requerir validación)
-        this.rol = rolString ? parseInt(rolString, 10) : 0 ; // 0 por defecto si no se encuentra en Session Storage
+        this.rol =  rolString ? parseInt(rolString, 10) : 0 ; // 0 por defecto si no se encuentra en Session Storage
         console.log(this.rol);
       }
     });

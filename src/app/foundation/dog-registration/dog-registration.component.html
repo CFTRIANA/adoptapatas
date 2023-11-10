@@ -3,13 +3,10 @@
   <div class="container">
     <h1>Registro de Fundación</h1>
     <br>
-    <div *ngIf="mostrarMensaje" class="alert-info">
-      Por favor ten en cuenta que la información debe ser verídica. Esta información es pública y es tu responsabilidad.
-    </div>
     <br>
 
     <div class="registration-form">
-      <h2>Registro de Perros</h2>
+
       <form #r="ngForm" (ngSubmit)="onSubmit(r)">
         <!-- Campos del formulario para registrar un perro -->
         <label for="nombre">Nombre del Perro:</label>
@@ -51,18 +48,23 @@
         <input type="text" id="temperamento" name="temperamento" [(ngModel)]="temperamento" required>
 
         <br><br>
-
-        <label for="vacunas">Vacunas:</label>
+<!-- label for="vacunas">Vacunas:</label>
         <input type="text" id="vacunas" name="vacunas" [(ngModel)]="vacunas" required>
 
         <br><br>
 
         <label for="disponibilidad">Disponibilidad:</label>
         <input type="text" id="disponibilidad" name="disponibilidad" [(ngModel)]="disponibilidad" required>
-
+ -->
+        <
         <div class="button-container">
-          <button class="left-button" [routerLink]="'/login'">Volver</button>
+         <!-- <button class="left-button" [routerLink]="'/login'">Volver</button>-->
           <button type="submit" class="right-button">Registrar perro</button>
+
+          <div *ngIf="mostrarMensaje" class="alert-info">
+           CREACION EXITOSA DEL CANINO
+          </div>
+
         </div>
       </form>
     </div>

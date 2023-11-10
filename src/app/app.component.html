@@ -379,27 +379,25 @@
     <div *ngIf="rol === 1" class="toolbar1" role="banner">
       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIENVENIDOS&nbsp;ADOPATAPAS</span>
       <div class="spacer"></div>
-      <button class="toolbar-button" [routerLink]="'/adoption'">Adoptar</button>
-      <button class="toolbar-button" [routerLink]="'/user-management'">Donar</button>
-      <button class="toolbar-volver" [routerLink]="'/adopter-dashboard'">Home</button>
+      <!--<button class="toolbar-volver" [routerLink]="'/adopter-dashboard'">Home</button>-->
       <button class="toolbar-volver" [routerLink]="'/login'"  (click)="cerrarSesion()">cerrar sesion</button>
 
     </div>
 
-    <div *ngIf="rol === 2" class="toolbar2" role="banner">
+    <div *ngIf="rol === 3" class="toolbar2" role="banner">
       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIENVENIDO&nbsp;MONITOR</span>
       <div class="spacer"></div>
       <button class="toolbar-button" [routerLink]="'/foundation-requests'">Activar fundacion</button>
-      <button class="toolbar-button" [routerLink]="'/role-management'">Cambio rol</button>
+    <!---  <button class="toolbar-button" [routerLink]="'/role-management'">Cambio rol</button>-->
       <button class="toolbar-volver" [routerLink]="'/adopter-dashboard'">Home</button>
       <button class="toolbar-volver" [routerLink]="'/login'"  (click)="cerrarSesion()">cerrar sesion</button>
 
     </div>
-    <div *ngIf="rol === 3" class="toolbar2" role="banner">
+    <div *ngIf="rol === 2" class="toolbar2" role="banner">
 
       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIENVENIDO&nbsp;FUNDACION</span>
       <div class="spacer"></div>
-      <button class="toolbar-button" [routerLink]="'/dog-update'">Buscar Canino</button>
+
       <button class="toolbar-button" [routerLink]="'/adoption-cart'">Disponibilidad Caninos</button>
       <button class="toolbar-button" [routerLink]="'/dog-registration'">Añadir Canino</button>
       <button class="toolbar-volver" [routerLink]="'/adopter-dashboard'">Home</button>

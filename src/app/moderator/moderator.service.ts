@@ -27,17 +27,8 @@ export class ModeratorService {
   }
 
 
-  activarfundacion2(token: string, foundationData: any): Observable<any[]> {
-    // Configurar el encabezado de autorización con el token Bearer
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    });
 
-    // Hacer la solicitud POST con los datos de la fundación y el encabezado de autorización
-    return this.http.post<any[]>(`${this.apiUrl}/activarfundacion`,foundationData, { headers });
 
-  }
   activarfundacion(token: string, foundationData: any): Observable<any[]> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',

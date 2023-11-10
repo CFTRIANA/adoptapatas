@@ -21,6 +21,20 @@ $padding-base-vertical: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
+
+    .alert-info {
+      background-color: #fd6363;
+      color: $black-color;
+      font-size: $font-size-base;
+      padding: $padding-base-vertical $padding-base-horizontal;
+      border: $border-thick solid $black-color;
+      border-radius: $border-radius-base;
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+   // Times New Roman
+    }
+
     img {
 
       max-width: 350px;

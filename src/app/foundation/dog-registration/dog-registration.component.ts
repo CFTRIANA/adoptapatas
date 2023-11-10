@@ -18,15 +18,15 @@ export class DogRegistrationComponent {
 
 nombreP: string = '';
 raza: string = '';
-edad: string = '';
+edad: number = 0;
 descripcion: string = '';
 fotocanino: string = ''; // La propiedad fotocanino será la que contendrá la ruta de la foto del canino seleccionada
 estadoSalud: string = '';
 temperamento: string = '';
-vacunas: string = '';
-disponibilidad: string = '';
-
-
+vacunas: boolean = true;
+disponibilidad:boolean = true;
+miToken: string | null = sessionStorage.getItem('token');
+mostrarAlerta: boolean = false;
   constructor(private router: Router, private FoundationService: FoundationService) {
     // Constructor de tu componente
   }
@@ -40,48 +40,49 @@ disponibilidad: string = '';
     //se envia en tipo credential
  // console.log( this.username,this.lastname,this.email,this.number,this.address,this.municipality,this.department,this.user,this.password)
 
-  console.log(
-    this.nombreP,
-    this.raza,
-    this.edad,
-    this.descripcion,
-    this.fotocanino,
-    this.estadoSalud,
-   this.temperamento,
-    this.vacunas,
-    this.disponibilidad,
 
-  );
 
   var Credential = {
     nombre: this.nombreP,
-    apellido: this.raza,
-    correo: this.edad,
-    celular: this.descripcion,
-    direccion: this.fotocanino,
-    municipio: this.estadoSalud,
-    departamento: this.temperamento,
-    usuario: this.vacunas,
-    contrasena: this.disponibilidad,
-
+    raza: this.raza,
+    edad: this.edad,
+    descripcion: this.descripcion,
+    imagen: this.fotocanino,
+    estadoSalud: this.estadoSalud,
+    temperamento: this.temperamento,
+    vacunas: this.vacunas,
+    disponibilidad: this.disponibilidad,
+    fkFundation : sessionStorage.getItem('idUsuario')
   };
 
-   var credentialR =  this.FoundationService.registroFundacion(Credential);
+
+  console.log(Credential);
+
+
+  if (this.miToken !== null ) {
+   var credentialR =  this.FoundationService.registroCanino(Credential , this.miToken );
 
    credentialR.subscribe(
-    (data:number) => {
+    (data:any) => {
 
-    if( data === 1){
+    if( data.respuesta === 1){
 
-    console.log("SE HA REALIZADO EXITOSAMENTE EL REGISTRO DE FUNDACION");
+
+      setTimeout(() => {
+        // Oculta el mensaje después de 2 segundos
+        this.mostrarAlerta = true;
+      }, 5000);
+
+
+    console.log("SE HA REALIZADO EXITOSAMENTE EL REGISTRO DEL CANINO");
    // this.redirigiradoptar();
 
 
 
     }
-    if(data === 0 ){
+    if(data.respuesta === 0 ){
 
-      console.log('NO SE HA REALIZADO EL REGISTRO ');
+      console.log('NO SE HA REALIZADO EL REGISTRO CANINO');
 
       //this.mostrarAlerta = true;
     }
@@ -97,7 +98,7 @@ disponibilidad: string = '';
     }
   );
 
-
+  }
 
   }
 

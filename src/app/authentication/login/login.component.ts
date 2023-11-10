@@ -39,10 +39,12 @@ export class LoginComponent {
     if( data.respuesta === 1){
 
 
-
     sessionStorage.setItem('token', data.token);
-    sessionStorage.setItem('rol',data.idRol);
-console.log(sessionStorage.getItem('rol'))
+    sessionStorage.setItem('idUsuario', data.id);
+    sessionStorage.setItem('idRol',data.idRol);
+    console.log("este es el id"+sessionStorage.getItem('idUsuario'));
+    console.log("este es el token"+sessionStorage.getItem('token'));
+    console.log("este es el rol"+sessionStorage.getItem('idRol'))
     console.log("SE HA INICIADO SESION ");
     //console.log(sessionStorage.getItem('token'))
 

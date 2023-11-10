@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,6 +13,19 @@ export class FoundationService {
   // Registro de Fundación
   registroFundacion(foundationData: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/registroFundacion`, foundationData);
+  }
+
+
+
+  registroCanino(credential: any ,token: string ): Observable<any[]> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+
+    const url = `${this.apiUrl}/crear`;
+
+    return this.http.post<any[]>(url, credential, { headers });
   }
 
   // Actualización de Fundación
