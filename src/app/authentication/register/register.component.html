@@ -1,10 +1,11 @@
 
 
 <div class="register-container">
-    <h2>Registrarse</h2>
+    <h2>Registrate como usuario</h2>
+    <h4> Digita por favor tus datos en los campos correspondientes </h4>
     <!-- Formulario de registro -->
     <form  #r="ngForm"  (ngSubmit)="onSubmit(r)">
-<h1> prueba</h1>
+
       <label for="username">Nombre:</label>
       <input type="text" id="username" name="username" [(ngModel)]="username" required>
 
@@ -56,7 +57,7 @@
 
 
      <div *ngIf="mostrarAlerta" class="alert-info">
-     REGISTRO CORRECTO , REDIRIGIENDO A ADOPCIONES 
+     REGISTRO CORRECTO , REDIRIGIENDO A ADOPCIONES
       </div>
 
 

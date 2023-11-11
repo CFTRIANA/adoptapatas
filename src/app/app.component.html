@@ -43,7 +43,8 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: #04519e;
+
     color: white;
     font-weight: 700;
   }
@@ -56,7 +57,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: #3300be;
     color: white;
     font-weight: 700;
     width: 100%;
@@ -70,7 +71,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: #23a3a3;
     color: white;
     font-weight: 700;
     width: 100%;
@@ -86,7 +87,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: #27c515;
     color: white;
     font-weight: 600;
     width: 100%;
@@ -335,35 +336,6 @@
   }
 </style>
 
-<!-- Toolbar ANTERIOR
-<div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
-  />
-  <span>BIENVENIDOS</span>
-
- <div class="spacer"></div>
-
- <a aria-label="Angular on YouTube" target="_blank" rel="noopener" href="https://www.ucundinamarca.edu.co/" title="UDEC">
-  <img src="https://www.ucundinamarca.edu.co/images/iconos/escudo_udec.png"  height="38" width="28" alt="Texto alternativo de la imagen"/>
-</a>
-
- -->
-<!---<div class="toolbar" role="banner">
-
-
-  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIENVENIDOS&nbsp;ADOPATAPAS</span>
-
-  <div class="spacer"></div>
-
-  <button class="toolbar-button"[routerLink]="'/login'">Inicio Sesion</button>
-  <button class="toolbar-button"[routerLink]="'/register'">Registrar Usuario</button>
-  <button class="toolbar-button"[routerLink]="'/foundation-registration'">Registrar Fundacion</button>
-
-
-    </div> -->
 
 
     <div *ngIf="rol === 0" class="toolbar0" role="banner">
@@ -379,7 +351,7 @@
     <div *ngIf="rol === 1" class="toolbar1" role="banner">
       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIENVENIDOS&nbsp;ADOPATAPAS</span>
       <div class="spacer"></div>
-      <!--<button class="toolbar-volver" [routerLink]="'/adopter-dashboard'">Home</button>-->
+      <button class="toolbar-volver" [routerLink]="'/adopter-dashboard'">Home</button>
       <button class="toolbar-volver" [routerLink]="'/login'"  (click)="cerrarSesion()">cerrar sesion</button>
 
     </div>

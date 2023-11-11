@@ -34,7 +34,7 @@ export class FoundationService {
   }
 
   // Obtener lista de Fundaciones
-  getFoundations(): Observable<any[]> {
+  obtenerCanino(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/foundations`);
   }
 

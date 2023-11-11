@@ -46,9 +46,12 @@
         <td>{{ fundacion.mision }}</td>
         <td>{{ fundacion.vision }}</td>
         <td>{{ fundacion.objetivoSocial }}</td>
-        <td>{{ fundacion.logoFundacion }}</td>
-        <td>{{ fundacion.fotoFundacion }}</td>
-
+        <td>
+          <img src="{{ fundacion.logoFundacion }}" alt="Logo de la Fundación" style="width: 80px; height: 50px;">
+        </td>
+        <td>
+          <img src="{{ fundacion.fotoFundacion }}" alt="Foto de la Fundación" style="width: 80px; height: 50px;">
+        </td>
       </tr>
     </tbody>
   </table>

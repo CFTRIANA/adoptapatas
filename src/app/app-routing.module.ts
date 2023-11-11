@@ -14,7 +14,7 @@ import { DeleteRoleComponent } from './admin/delete-role/delete-role.component';
 import { FoundationRegistrationComponent } from './foundation/foundation-registration/foundation-registration.component';
 import { DogRegistrationComponent } from './foundation/dog-registration/dog-registration.component';
 import { DogUpdateComponent } from './foundation/dog-update/dog-update.component';
-//import { GenerateReportComponent } from './foundation/generate-report/generate-report.component';
+import { GenerateReportComponent } from './foundation/generate-report/generate-report.component';
 
 import { AdoptionComponent } from './adopter/adoption/adoption.component';
 import { AdoptionCartComponent } from './adopter/adoption-cart/adoption-cart.component';
@@ -27,23 +27,23 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
-  { path: 'user-management', component: UserManagementComponent },
-  { path: 'role-management', component: RoleManagementComponent },
+  { path: 'admin/user-management', component: UserManagementComponent },
+  { path: 'admin/role-management', component: RoleManagementComponent },
   { path: 'admin/delete-role', component: DeleteRoleComponent },
 
   { path: 'foundation/foundation-registration', component: FoundationRegistrationComponent },
   { path: 'foundation-registration', component: FoundationRegistrationComponent },
   { path: 'dog-registration', component: DogRegistrationComponent },
- { path: 'dog-update', component: DogUpdateComponent },
- // { path: 'foundation/generate-report', component: GenerateReportComponent },
+  { path: 'dog-update', component: DogUpdateComponent },
+  { path: 'foundation/generate-report', component: GenerateReportComponent },
 
   { path: 'adoption', component: AdoptionComponent },
 
-  { path: 'adoption-cart', component: AdoptionCartComponent },
+  { path: 'adopter/adoption-cart', component: AdoptionCartComponent },
   { path: 'adopter-dashboard', component: AdopterDashboardComponent },
 
-  { path: 'foundation-requests', component: FoundationRequestsComponent },
-  { path: 'reports', component: ReportsComponent },
+  { path: 'moderator/foundation-requests', component: FoundationRequestsComponent },
+  { path: 'moderator/reports', component: ReportsComponent },
 
   // Puedes añadir más rutas según sea necesario
 

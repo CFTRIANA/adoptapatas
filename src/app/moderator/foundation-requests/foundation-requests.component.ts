@@ -65,6 +65,8 @@ export class FoundationRequestsComponent implements OnInit {
     this.fundacionesSeleccionada.push(fundacion);
   }
 
+
+
   procesarSeleccion() {
     // Haz lo que necesitas con la fundación seleccionada
 

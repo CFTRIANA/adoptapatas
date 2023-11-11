@@ -3,10 +3,11 @@
 
 
 <div class="container">
-    <h1>Registro de Fundación</h1>
+    <h1>Registro de Fundación</h1>  <h3>digita los datos correspondientes para enviar la solicitud </h3>
+
     <br>
     <div *ngIf="mostrarMensaje" class="alert-info">
-      Por Favor ten encuenta Que la informacion debe ser beridica, sera revisada. de ser seleccionado se enviara la informacion del siguiente paso
+      Por Favor ten encuenta Que la informacion debe ser beridica, sera revisada. te enviaremos un correo con los pasos a seguir...
     </div>
     <br>
     <form #r="ngForm"  (ngSubmit)="onSubmit(r)">
@@ -32,6 +33,7 @@
 <br><br>
 
 <label for="correo">Correo Electrónico:</label>
+<h6>ten en cuenta que si esta mal digitado NO te llegara el correo necesario ¡En ese caso de deberas de generar una nueva solicitud!  </h6>
 <input type="email" id="correo" name="correo" [(ngModel)]="correo" required>
 <br><br>
 
@@ -60,7 +62,7 @@
 <br><br>
 
 <label for="logoFundacion">Logo de la Fundación:</label>
-<input type="file" (change)="onFileSelected($event, 'logoFundacion')" accept="image/*"   required>
+<input type="file" (change)="onFileSelected($event, 'logoFundacion')" accept="image/jpeg*"   required>
 <!-- <input type="file" id="logoFundacion" name="logoFundacion" [(ngModel)]="logoFundacion" (change)="onFileSelected($event, 'logoFundacion')" required>
   -->
 <br><br>
@@ -68,7 +70,7 @@
 <br><br>
 
 <label for="fotoFundacion">Foto de la Fundación:</label>
-<input type="file" (change)="onFileSelected2($event, 'fotoFundacion')" accept="image/*"   required>
+<input type="file" (change)="onFileSelected2($event, 'fotoFundacion')" accept="image/jpeg"   required>
 <!--<input type="file" id="fotoFundacion" name="fotoFundacion" [(ngModel)]="fotoFundacion"  (change)="onFileSelected($event, 'fotoFundacion')" required>-->
 <br><br>
 
@@ -83,7 +85,7 @@ REGISTRO COMPLETADO EXITOSAMENTE
 </div>
 
 <div class="button-container">
-  <button class="left-button" [routerLink]="'/login'">Volver</button>
+
   <button type="onSubmit" class="right-button">Enviar solicitud</button>
 </div>
 

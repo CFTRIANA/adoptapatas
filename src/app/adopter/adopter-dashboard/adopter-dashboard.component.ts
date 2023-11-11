@@ -1,4 +1,7 @@
+import { AdopterService } from './../adopter.service';
 import { Component, OnInit } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-canino',
@@ -6,36 +9,87 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adopter-dashboard.component.scss']
 })
 export class AdopterDashboardComponent implements OnInit {
-  imagenActual: string='jaja';
-  nombre: string='rogelio';
-  fundacion: string='me lo pela.net';
-  edad: number= 12;
-  raza: string='de la calle';
-  descripcion: string= 'es bonito pero me lo pela';
-   estadoSalud: string = 'Bueno'; // Valor inicial
-  temperamento: string='muerde muchoooo';
+  imagenActual: string='';
+  nombre: string='';
+  fundacion: string='';
+  edad: number= 0;
+  raza: string='';
+  descripcion: string= '';
+   estadoSalud: string = ''; // Valor inicial
+  temperamento: string='';
+  imagenBase64: string = '';
 
-  constructor() {}
-  //CON BASE 64 IMAGENES
-  //COMPONENTE DE ANGULAROCN BANNER
+  caninos: any[] = []; // Array para almacenar la lista de caninos
+  indiceCaninoActual: number = 0;
 
+  constructor(private AdopterService: AdopterService) {}
 
   ngOnInit() {
-    //ROL = ADMIN
-    this.imagenActual = 'URL de la primera imagen'; // Establece la URL de la imagen inicial
-    this.nombre = 'Nombre del Canino 1'; // Establece la información inicial
-    this.fundacion = 'Fundación 1';
-    this.edad = 2;
-    this.raza = 'Raza 1';
-    this.descripcion = 'Una breve descripción del canino 1.';
-    this.estadoSalud = 'Bueno';
-    this.temperamento = 'Amigable y juguetón';
+
+    this.mostrarCanino();
+
+
   }
 
-  cambiarContenido(n: number) {
-    // Implementa lógica para cambiar la información y la imagen según n (anterior o siguiente)
-    // Por ejemplo, puedes cambiar las propiedades en función del índice actual.
-    // Asegúrate de manejar los límites para evitar errores.
+
+  mostrarCanino() {
+    var credentialR = this.AdopterService.obtenerCaninos();
+
+    credentialR.subscribe(
+      (data: any[]) => {
+        this.caninos = data;
+        // Mostrar el primer canino al cargar la página
+        this.mostrarCaninoActual();
+        console.log("SE HA REALIZADO EXITOSAMENTE EL REGISTRO DE FUNDACION");
+
+      },
+      (error) => {
+        console.error('Ocurrió un error al obtener los caninos:', error);
+        // Manejar errores si es necesario
+      }
+    );
   }
+
+
+
+
+  mostrarCaninoActual() {
+    const canino = this.caninos[this.indiceCaninoActual];
+    if (canino) {
+      // Asignar valores del canino actual
+
+      this.imagenBase64 = canino.imagen;
+      this.nombre = canino.nombre;
+      this.fundacion = canino.fundacion;
+      this.edad = canino.edad;
+      this.raza = canino.raza;
+      this.descripcion = canino.descripcion;
+      this.estadoSalud = canino.estadoSalud;
+      this.temperamento = canino.temperamento;
+      this.mostrarImagen(this.imagenBase64);
+    }
+  }
+
+
+  cambiarCaninoadelante() {
+    // Cambiar al siguiente canino
+    this.indiceCaninoActual = (this.indiceCaninoActual + 1) % this.caninos.length;
+    this.mostrarCaninoActual();
+  }
+  cambiarCaninoatras() {
+    // Cambiar al siguiente canino
+    this.indiceCaninoActual = (this.indiceCaninoActual - 1) % this.caninos.length;
+    this.mostrarCaninoActual();
+  }
+
+
+
+  // Método para establecer la imagen
+  mostrarImagen(cadenaBase64: string): void {
+    this.imagenBase64 = cadenaBase64;
+  }
+
+
+
 
 }

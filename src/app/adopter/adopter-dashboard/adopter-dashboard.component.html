@@ -1,26 +1,45 @@
 
 
 <div class="banner">
-  <button (click)="cambiarContenido(-1)" class="banner-button">Anterior</button>
+
   <div class="canine-image-container">
-    <img [src]="imagenActual" class="canine-image2" alt="Imagen de canino">
+    <img *ngIf="imagenBase64" [src]="imagenBase64" alt="Imagen">
+<div class="botonescambiar">
+  <button class="cambiar" (click)="  cambiarCaninoatras()">Anterior </button>
+  <button class="cambiar" (click)="  cambiarCaninoadelante()">Siguiente </button>
+</div>
+
   </div>
-  <button (click)="cambiarContenido(1)" class="banner-button">Siguiente</button>
+
 
   <div class="canine-info">
     <h2>{{ nombre }}</h2>
-    <p>Fundacion Responsable: {{ fundacion }}</p>
-    <p>Edad: {{ edad }} años</p>
-    <p>Raza: {{ raza }}</p>
-    <p>Descripción: {{ descripcion }}</p>
-    <p>Estado de Salud: {{ estadoSalud }}</p>
-    <p>Temperamento: {{ temperamento }}</p>
-
+    <p><strong>Edad:</strong> {{ edad }} años</p>
+    <p><strong>Raza:</strong> {{ raza }}</p>
+    <p><strong>Descripción:</strong> {{ descripcion }}</p>
+    <p><strong>Estado de Salud:</strong> {{ estadoSalud }}</p>
+    <p><strong>Temperamento:</strong> {{ temperamento }}</p>
+    <div class="botonesacciones">
+      <br>
+      <br>
+      <h3><strong>Esta bonito verdad!? Puedes <span class="ayuda">ayudar</span> con una de las siguientes opciones:</strong></h3>
+      <button class="accion1" [routerLink]="'/adoption'">Adoptar</button>
+      <button class="accion2" [routerLink]="'/adoption-cart'">Donar</button>
+    </div>
   </div>
-  <button class="izquierdo" [routerLink]="'/adoption'">Adoptar</button>
-  <button class="derecho" [routerLink]="'/user-management'">Donar</button>
+
+
+
 </div>
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 

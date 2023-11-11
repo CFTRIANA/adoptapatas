@@ -1,34 +1,105 @@
 .banner {
   display: flex;
   align-items: center;
-  background-color: #dedede;
+  justify-content: space-between;
   padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 92%; /* Cambiar a 100% para ocupar el ancho completo */
+  margin: auto; /* Centrar el banner horizontalmente */
 }
 
 .canine-image-container {
-  max-width: 30%; /* Establece el ancho máximo al 65% del contenedor */
-  padding: 20px;
-  display: flex;
-  justify-content: center; /* Centra horizontalmente la imagen */
-  align-items: center; /* Centra verticalmente la imagen */
+  flex: 0 0 40%; /* Tamaño fijo del contenedor de la imagen */
+  overflow: hidden; /* Ocultar el exceso de imagen */
+  .botonescambiar {
+
+    display: flex;
+    justify-content: space-between; /* Añade espacio entre los botones */
+  }
+
+  .botonescambiar button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em; /* Ajustar el tamaño del botón según tus necesidades */
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    flex: 1; /* Distribuye el espacio disponible igualmente entre los botones */
+    margin-right: 10px; /* Añade espacio entre los botones (opcional) */
+  }
+  .botonescambiar button:hover {
+    background-color: #45a049;
+}
 }
 
-.canine-image2 {
-  max-width: 100%; /* Establece el ancho máximo al 100% del contenedor */
+.canine-image-container img {
+  width: 100%;
   height: auto;
+  border-radius: 5px;
 }
 
 .canine-info {
-  width: 50%;
-  padding: 20px;
+  flex: 1;
+  margin-left: 20px;
+  .ayuda {
+    text-decoration: underline;
+  }
+  .botonesacciones {
+    text-align: center;
+  }
+
+  .botonesacciones h3 {
+    color: #333;
+  }
+
+  .botonesacciones button {
+    border: none;
+    padding: 5px 10px; /* Ajusta el tamaño del botón según tus necesidades */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em; /* Ajustar el tamaño del texto según tus necesidades */
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 4px 2px;
+    width: 80px; /* Ajusta el ancho del botón según tus necesidades */
+  }
+
+  .accion1 {
+    background-color: #e05eae;
+    color: white;
+  }
+
+  .accion2 {
+    background-color: hsl(165, 49%, 47%);
+    color: white;
+  }
+
+  .botonesacciones button:hover {
+    opacity: 0.8;
+  }
+
+
+
+
 }
 
-.canine-info h2 {
-  font-size: 24px;
-  margin: 0;
+h2 {
+  color: #333;
+  font-size: 2.5em; /* Ajustar el tamaño del título según tus necesidades */
+  text-transform: uppercase; /* Transformar texto a mayúsculas */
+  font-family: 'TuFuenteEspecial', sans-serif; /* Cambiar a la fuente deseada */
 }
 
-.canine-info p {
-  font-size: 16px;
-  margin: 0;
+p {
+  font-size: 1.5em; /* Ajustar el tamaño del texto según tus necesidades */
 }
+

@@ -29,6 +29,13 @@ export class AppComponent {
         // Convierte el valor a un número (puede requerir validación)
         this.rol =  rolString ? parseInt(rolString, 10) : 0 ; // 0 por defecto si no se encuentra en Session Storage
         console.log(this.rol);
+
+
+
+
+
+
+
       }
     });
     // Obtener el valor de "rol" del Session Storage

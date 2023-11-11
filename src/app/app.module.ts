@@ -28,6 +28,7 @@ import { AdopterDashboardComponent } from './adopter/adopter-dashboard/adopter-d
 import { FoundationRequestsComponent } from './moderator/foundation-requests/foundation-requests.component';
 import { ReportsComponent } from './moderator/reports/reports.component';
 import { NotificationComponent } from './notification/notification.component';
+import { GuardianrutaComponent } from './guardianruta/guardianruta.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { NotificationComponent } from './notification/notification.component';
     AdopterDashboardComponent,
     FoundationRequestsComponent,
     ReportsComponent,
-    NotificationComponent
+    NotificationComponent,
+    GuardianrutaComponent
   ],
   imports: [
     BrowserModule,

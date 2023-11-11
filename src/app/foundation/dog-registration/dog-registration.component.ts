@@ -71,6 +71,7 @@ mostrarAlerta: boolean = false;
       setTimeout(() => {
         // Oculta el mensaje después de 2 segundos
         this.mostrarAlerta = true;
+
       }, 5000);
 
 
