@@ -1,42 +1,39 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AdopterService} from '../adopter.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-adoption',
   templateUrl: './adoption.component.html',
   styleUrls: ['./adoption.component.scss']
 })
-export class AdoptionComponent {
+export class AdoptionComponent implements OnInit {
+  nombreCanin: string | null = null;
+  edadCanino: string | null = null;
+  razaCanino: string | null = null;
+  nombreUsuario: string | null = null;
+  correoUsuario: string | null = null;
+  idUsuario: string | null = null;
+  token: string | null = null;
+  idRol: string | null = null;
+  nombre: string | null = null;
+  correo: string | null = null;
 
-  // Lógica del componente de adopción
-  constructor(private router: Router, private AdopterService: AdopterService) {
-    // Constructor de tu componente
+  ngOnInit() {
+    // Asigna los valores de sessionStorage a las propiedades de la clase
+    this.nombreCanin = sessionStorage.getItem('nombreCanin');
+    this.edadCanino = sessionStorage.getItem('edadCanino');
+    this.razaCanino = sessionStorage.getItem('razaCanino');
+    this.nombre = sessionStorage.getItem('nombre');
+    this.correo = sessionStorage.getItem('correo');
+
+
+
+    // Imprime los valores en la consola
+    console.log("este es nombre ", this.nombreCanin);
+    console.log("esta es edad", this.edadCanino);
+    console.log("esta es raza", this.razaCanino);
+    console.log("Nombre", this.nombre);
+    console.log("CORREO:", this.correo);
+    console.log("SE HA INICIADO SESION ");
   }
-  rols: string = "";
- roln: number = 0;
-
-  ngOnInit(): void {
-
-    const rolString = sessionStorage.getItem('idRol');
-  // Convierte el valor a un número (puede requerir validación)
-  this.roln =  rolString ? parseInt(rolString, 10) : 0 ; // 0 por defecto si no se encuentra en Session Storage
-
-  if (rolString !== null) {
-    this.rols = rolString;
-  }
-  console.log(this.roln,this.rols);
-
-  /* if(rolString === "idundefined"){
-
-     this.redirigiradoptar();
-
-}*/
-  }
-
-
-  redirigiradoptar() {
-    this.router.navigate(['/login']);
-  }
-
 }
+

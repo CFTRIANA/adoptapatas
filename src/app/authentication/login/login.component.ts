@@ -42,9 +42,13 @@ export class LoginComponent {
     sessionStorage.setItem('token', data.token);
     sessionStorage.setItem('idUsuario', data.id);
     sessionStorage.setItem('idRol',data.idRol);
+    sessionStorage.setItem('nombre',data.nombre);
+    sessionStorage.setItem('correo',data.correo);
     console.log("este es el id"+sessionStorage.getItem('idUsuario'));
     console.log("este es el token"+sessionStorage.getItem('token'));
     console.log("este es el rol"+sessionStorage.getItem('idRol'))
+    console.log("Nombre"+sessionStorage.getItem('nombre'))
+    console.log("CORREO:"+sessionStorage.getItem('correo'))
     console.log("SE HA INICIADO SESION ");
     //console.log(sessionStorage.getItem('token'))
 

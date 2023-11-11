@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class acessoservice {
   getRol(): number | null {
     const idRol = sessionStorage.getItem('idRol');
-    return idRol ? +idRol : null; // Convierte a número o devuelve null si es nulo
+    return idRol ? +idRol : null;
   }
 
   isLoggedIn(): boolean {

@@ -21,8 +21,15 @@ export class AdopterDashboardComponent implements OnInit {
 
   caninos: any[] = []; // Array para almacenar la lista de caninos
   indiceCaninoActual: number = 0;
+  fechaActual: string = "fecha";
 
-  constructor(private AdopterService: AdopterService) {}
+  constructor(
+
+
+    private AdopterService: AdopterService
+
+
+    ) {}
 
   ngOnInit() {
 
@@ -67,6 +74,22 @@ export class AdopterDashboardComponent implements OnInit {
       this.estadoSalud = canino.estadoSalud;
       this.temperamento = canino.temperamento;
       this.mostrarImagen(this.imagenBase64);
+
+
+
+
+      sessionStorage.setItem('nombreCanino', canino.nombre);
+      sessionStorage.setItem('edadCanino', canino.edad);
+      sessionStorage.setItem('razaCanino',canino.raza);
+      sessionStorage.getItem('nombre');
+      sessionStorage.getItem('correo');
+      console.log("datos de das")
+      console.log("este es el nombre (das)"+sessionStorage.getItem('nombreCanino'));
+      console.log("este es la edad (das)"+ sessionStorage.getItem('edadCanino'));
+      console.log("este es el raza(das)"+sessionStorage.getItem('razaCanino'))
+      console.log("este es el nombre(das)"+sessionStorage.getItem('nombre'))
+      console.log("este es el correo(das)"+sessionStorage.getItem('correo'))
+
     }
   }
 
